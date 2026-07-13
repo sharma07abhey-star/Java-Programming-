@@ -14,6 +14,6 @@ public class strings_08 {
         // 2.
         int a = sc.nextInt();
         String b = Integer.toString(a);
-        System.out.println(a);
+        System.out.println(b);
     }
 }
