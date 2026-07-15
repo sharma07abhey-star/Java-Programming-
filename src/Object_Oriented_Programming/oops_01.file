@@ -1,0 +1,13 @@
+// Object-Oriented Programming - It is a programming approach which revolves around objects
+// Object - Any entity in the system that can be defined as a set of properties using the entities property
+// set is known as object .
+
+// 5 Key principles : Encapsulation , Data Hiding , Inheritance , Polymorphism , Abstraction .
+
+// Classes and objects : 
+// 1. Class is a blueprint of an object . 
+// 2. Class is a description of Objects property set and set of operations 
+// 3. Creating class is as good as defining a new data type .
+// 4. Class is a means to achieve encapsulation .
+// 5. Object is a runtime entity  .
+// 6. Object is an instance (example) of a class .
