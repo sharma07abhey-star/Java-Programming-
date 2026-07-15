@@ -11,3 +11,56 @@
 // 4. Class is a means to achieve encapsulation .
 // 5. Object is a runtime entity  .
 // 6. Object is an instance (example) of a class .
+
+// This keyword - It refers to the current object
+// the specific object whose method or constructor is currently executing .
+// Using this.name explicitly tells java compiler "I mean the instance variable of this object not the parameter."
+// public void set_data(String name , String color , int gears , int price){
+           this.name = name;
+           this.color = color;
+           this.gears = gears;
+           this.price = price; }
+
+// Construction -
+// 1. It is a member function of a class
+// 2. It has the same name as name of the class
+// 3. It has no return type , so cannot use return keyword
+// 4. It must be an instance member function that is it can never be static
+
+// How to call constructor
+// 1. Constructor is implicitly invoked just after the creation of an object
+// 2. Constructor is used to solve the problem of Initialization
+
+// Types of constructor
+// 1. Default Constructor ->
+
+    a. Object ban ne par constructor automatically call hote hain .
+    b. Compiler constructor banate hain , agar hum constructor nhi bnate hn .
+    c. Compiler jo constructor banate hn usme koi argument nhi pass hota
+    d.yadi hum 1 bhi constructor banate hn to compiler apne se koi constructor nhi bnata
+    e.Jab hum koi bhi constructor nhi banate hn to compiler apne se 2 tarah ke constructor banate hn
+        1. default constructor
+        2. copy constructor
+// 2. Parameterized Constructor ->
+    
+
+// 3. Copy Constructor ->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

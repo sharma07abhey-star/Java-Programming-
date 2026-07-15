@@ -1,18 +1,14 @@
 package Object_Oriented_Programming;
 
-// represent a car using class with properties like name color and gears and price
-// define a method inside a class to set the data in the above properties .
-// similarly define one more method to print the data of the above member variables .
-// Take input from user .
-
+// Represent a car with member variables name , color , gears and price .Initialize all the member variables
+// using the constructor and print the values of all by defining another method print data .
 import java.util.*;
-class car{
+class car2{
     String name;
     String color;
     int gears;
     int price;
-
-    public void setdata(String name , String color , int gears , int price){
+    car2(String name , String color , int gears , int price){
         this.name = name;
         this.color = color;
         this.gears = gears;
@@ -25,7 +21,7 @@ class car{
         System.out.println("Price of the car is " + price);
     }
 }
-public class oop_02 {
+public class oop_04 {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Name of the car");
@@ -36,8 +32,7 @@ public class oop_02 {
         int r = sc.nextInt();
         System.out.println("Enter price of the car");
         int s = sc.nextInt();
-        car c1 = new car();
-        c1.setdata(p,q,r,s);
-        c1.display();
+        car2 c = new car2(p,q,r,s);
+        c.display();
     }
 }
