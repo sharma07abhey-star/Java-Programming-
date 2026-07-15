@@ -37,12 +37,15 @@
     a. Object ban ne par constructor automatically call hote hain .
     b. Compiler constructor banate hain , agar hum constructor nhi bnate hn .
     c. Compiler jo constructor banate hn usme koi argument nhi pass hota
-    d.yadi hum 1 bhi constructor banate hn to compiler apne se koi constructor nhi bnata
-    e.Jab hum koi bhi constructor nhi banate hn to compiler apne se 2 tarah ke constructor banate hn
+    d. yadi hum 1 bhi constructor banate hn to compiler apne se koi constructor nhi bnata
+    e. Jab hum koi bhi constructor nhi banate hn to compiler apne se 2 tarah ke constructor banate hn
         1. default constructor
         2. copy constructor
+    f. jab hum koi bhi constructor banate hn (exact copy constructor ) tab compiler sirf copy constructor banata h
+    g. jab hum copy constructor banate hn tab compiler koi bhi constructor nhi banata
+
 // 2. Parameterized Constructor ->
-    
+
 
 // 3. Copy Constructor ->
 
