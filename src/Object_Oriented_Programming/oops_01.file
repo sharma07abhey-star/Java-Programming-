@@ -67,7 +67,7 @@
 //  specifier        same class       same package     subclass(different package)     different package(non-subclass)
 
     private         yes             No                  No                             NO
-    deffault        Yes             yes                 No                             NO
+    default        Yes             yes                 No                             NO
     Protected       yes             yes                 yes                            No
     public          yes             yes                 yes                            yes
 
