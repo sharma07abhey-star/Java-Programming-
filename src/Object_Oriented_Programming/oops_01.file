@@ -1,10 +1,12 @@
 // Object-Oriented Programming - It is a programming approach which revolves around objects
+
 // Object - Any entity in the system that can be defined as a set of properties using the entities property
 // set is known as object .
 
 // 5 Key principles : Encapsulation , Data Hiding , Inheritance , Polymorphism , Abstraction .
 
-// Classes and objects : 
+// Classes and objects :
+
 // 1. Class is a blueprint of an object . 
 // 2. Class is a description of Objects property set and set of operations 
 // 3. Creating class is as good as defining a new data type .
@@ -13,25 +15,28 @@
 // 6. Object is an instance (example) of a class .
 
 // This keyword - It refers to the current object
-// the specific object whose method or constructor is currently executing .
-// Using this.name explicitly tells java compiler "I mean the instance variable of this object not the parameter."
-// public void set_data(String name , String color , int gears , int price){
+     the specific object whose method or constructor is currently executing .
+     Using this.name explicitly tells java compiler "I mean the instance variable of this object not the parameter."
+     public void set_data(String name , String color , int gears , int price){
            this.name = name;
            this.color = color;
            this.gears = gears;
            this.price = price; }
 
 // Construction -
+
 // 1. It is a member function of a class
 // 2. It has the same name as name of the class
 // 3. It has no return type , so cannot use return keyword
 // 4. It must be an instance member function that is it can never be static
 
 // How to call constructor
+
 // 1. Constructor is implicitly invoked just after the creation of an object
 // 2. Constructor is used to solve the problem of Initialization
 
 // Types of constructor
+
 // 1. Default Constructor ->
 
     a. Object ban ne par constructor automatically call hote hain .
@@ -41,14 +46,33 @@
     e. Jab hum koi bhi constructor nhi banate hn to compiler apne se 2 tarah ke constructor banate hn
         1. default constructor
         2. copy constructor
-    f. jab hum koi bhi constructor banate hn (exact copy constructor ) tab compiler sirf copy constructor banata h
+    f. jab hum koi bhi constructor banate hn (exact copy constructor ) tab compiler sirf copy constructor banata h (Invalid for Java)
     g. jab hum copy constructor banate hn tab compiler koi bhi constructor nhi banata
+    h. Java mein agar copy constructor banana hai to use sirf user hi bna sakta hai . java compiler nhi bna sakta
 
-// 2. Parameterized Constructor ->
-
+// 2. Parameterized Constructor -> Parameters are given by user
 
 // 3. Copy Constructor ->
 
+    ek object ke value ko dusre mein copy karne ko copy constructor kehte hn .
+
+// Access Specifiers / Access Modifiers / Visibility Modes
+
+    1. Private - Accessible only within the class
+    2. Protected - Accessible within the class and derived class
+    3. Public - Accessible from anywhere and by anyone
+
+// The Four Access Specifiers in Java
+
+//  specifier        same class       same package     subclass(different package)     different package(non-subclass)
+
+    private         yes             No                  No                             NO
+    deffault        Yes             yes                 No                             NO
+    Protected       yes             yes                 yes                            No
+    public          yes             yes                 yes                            yes
+
+
+//
 
 
 
