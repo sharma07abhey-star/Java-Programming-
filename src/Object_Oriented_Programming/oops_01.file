@@ -43,9 +43,9 @@
     b. Compiler constructor banate hain , agar hum constructor nhi bnate hn .
     c. Compiler jo constructor banate hn usme koi argument nhi pass hota
     d. yadi hum 1 bhi constructor banate hn to compiler apne se koi constructor nhi bnata
-    e. Jab hum koi bhi constructor nhi banate hn to compiler apne se 2 tarah ke constructor banate hn
+    e. Jab hum koi bhi constructor nhi banate hn to compiler apne se 1 constructor banata h
         1. default constructor
-        2. copy constructor
+
     f. jab hum koi bhi constructor banate hn (exact copy constructor ) tab compiler sirf copy constructor banata h (Invalid for Java)
     g. jab hum copy constructor banate hn tab compiler koi bhi constructor nhi banata
     h. Java mein agar copy constructor banana hai to use sirf user hi bna sakta hai . java compiler nhi bna sakta
@@ -72,10 +72,90 @@
     public          yes             yes                 yes                            yes
 
 
-//
+// The Problem : Data Shared Across ALl Objects
+    Every object created from a class gets its own copy of instance variables . But sometimes , we need a
+    value that should be shared by all objects - the same single copy , used and updated by every object collectively
+
+    Example Scenario : Suppose we want to count how many student objects have been created so far , across the
+    entire program , if count were a regular instance variable , each object would have its own seperate count ,
+    always starting at 0 - that wont work for a shared , running total .
+    This is exactly what the static keyboard solves .
+
+// Static Variable ( class variables )
+
+    A static variable belongs to the class itself , not to any individual object .
+    There is only one copy of it , shared by all objects of the class .
+
+    class student {
+        String name ;
+        static int studentCount = 0;
+
+        Student(String name){
+            this.name = name ;
+            studentCount ++;
+        }
+    }
+    public class main {
+        public static void main(String[] args){
+            Student s1 = new Student("Ravi");
+            Student s2 = new Student("Abhey");
+
+            System.out.println("Total Students :" + student.studentCount);
+        }
+    }
+
+    // Key Observations :
+    -> studentCount is accessed using the class name : Student.studentCount(this is the preferred way),
+       though s1.studentCount also technically works .
+    -> All three objects share and update the same studentCount - it isn't resent per object .
 
 
+// Static Methods
+   A static method also belongs to the class , not to any specific object . It can be called directly using the class
+   name , without creating an object first .
 
+   Class MathUtils {
+        static int square(int n){
+            return n*n;
+        }
+   }
+   public class Main{
+        public static void main(String[] args){
+            int result = MathUtils.square(5);
+            System.out.println(result);
+        }
+   }
+
+   This is exactly why main itself is static : public static void main(...) needs to run before any object of the
+   class even exists , so the JVM must be able to call it directly on the class .
+
+// Important Restriction : Static Methods Cannot Access Instance Members Directly
+
+    Class Student{
+        String name ;
+        static int count ;
+
+        static void show(){
+            System.out.println(count);   // ok - static can  access static
+            // System..out.println(name);  // error , cannot access instance variable
+        }
+    }
+
+    why ? A static method might run before any object exists at all .
+    Since name only exists once an object is created , there's no gauranteed name for the static method to refer to .
+    Static methods can only directly access other static members .
+
+// Static vs Instance - Summary table
+
+                                        Instance(non static)            static
+
+             belongs to                 each individual object          the class itself
+             copies                     one copy per object             one single copy , shared by all
+             Accessed via               objectName.member               className.member (preffered)
+             can access Instance
+             members ?                   yes                            No , not directly
+             Exists                     only after object creation      Exists as soon as the class is loaded
+                                        (new)
 
 
 
