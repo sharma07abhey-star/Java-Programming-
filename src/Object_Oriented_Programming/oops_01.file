@@ -7,8 +7,8 @@
 
 // Classes and objects :
 
-// 1. Class is a blueprint of an object . 
-// 2. Class is a description of Objects property set and set of operations 
+// 1. Class is a blueprint of an object .
+// 2. Class is a description of Objects property set and set of operations
 // 3. Creating class is as good as defining a new data type .
 // 4. Class is a means to achieve encapsulation .
 // 5. Object is a runtime entity  .
@@ -159,15 +159,66 @@
 
 
 
+// Static Blocks
+   What is Static Block ?
+   A static block is a block of code that runs exactly once , when the class is first loaded into memory - even before
+   the main method runs , and before any object is created . Its mainly used to initialize static variables with some
+   computation or logic ( not just a simple direct assignment) .
 
+   Syntax and Example
 
+   class Configuration{
+        static String appname ;
+        static int version ;
 
+        // static block
+        static {
+            system.out.println("Static block executing ..");
+            appname = "StudentManager";
+            version = 1;
+        }
+   }
+   public class Main{
+        public static void main(String[] args){
+            System.out.println("Main method started");
+            System.out.println(configuration.appname);
+            System.out.println(configuration.version);
+        }
+   }
 
+   output :
+   static block executing ...
+   Main method started
+   studentManager
+   1
 
+   Notice : "Static block executing ..." prints before "Main method started" -
+            because the static block runs automatically the moment the configuration class is loaded
+            ( which happens as soon as its referenced ) , even though main is the method we "Start" the program from .
 
+// Why use a Static Block instead of direct assignment ?
 
+    for simple values , direct assignment is enough :
 
+    eg ->       static int version = 1;     // simple , no static block needed
 
+    But static blocks are useful when initialization requires some logic - loops ,conditions , exception handling , or
+    reading external configuration - things a single line assignment cannot express .
 
+    class constants{
+        static int[] evenNumbers = new int[5];
 
+        static {
+            for(int i = 0;i<5;i++){
+                evenNumbers[i] = i * 2;   // computed initialization : 0,2,4,6,8,10
+            }
+        }
+    }
 
+//  Order of Execution ( Important Concept )
+
+    when a class is loaded , java executes things in this order :
+    1. Static Variables and static blocks - run once ,in the order they appear in the code ,
+     when the class is first loaded .
+    2. Instance variables and instance initializer blocks , then constructor - run every time a new object is created
+    3. main() method (If this is the class being run ) executes as part of this overall loading process .
