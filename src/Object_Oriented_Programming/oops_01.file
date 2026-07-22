@@ -221,4 +221,145 @@
     1. Static Variables and static blocks - run once ,in the order they appear in the code ,
      when the class is first loaded .
     2. Instance variables and instance initializer blocks , then constructor - run every time a new object is created
-    3. main() method (If this is the class being run ) executes as part of this overall loading process .
+    3. main() method ( If this is the class being run ) executes as part of this overall loading process .
+
+// Encapsulation ->
+    It is an important pillar of oops that binds together the data(variables) & the methods that manipulates
+    the data & that keeps the data safe from outside interference & misuse .
+    class user{
+        private string username;
+        private int password;
+
+        user(string username , int password){
+            this.username = username;
+            this.password = password;
+        }
+        public int getpassword(){
+            return password;
+        }
+        public string getusername(){
+            return username;
+        }
+        public class encapsulation{
+            psvma (s[] args){
+                user obj = new user("atagi" , 123445);
+                string username = obj.getusername();
+                int pass = obj.getpassword();
+                sop("username & password of your account is" + username +" & "+ password);
+            }
+        }
+    }
+
+// Inheritance ->
+    1. Inheritance is a key principle of OOPs .
+    2. Class is used to describe properties and behaviour of an object .
+    3. Properties means values ( Data members )
+    4. Behaviour means action ( methods ).
+
+    let us assume that we represent a car
+
+    CAR                                             SPORTS CAR
+
+    properties              methods                 properties              methods
+
+    price                   setprice()              price                   setprice()
+    fuelType                getPrice()              fueltype                getprice()
+    color                   setfuel()               color                   setColor()
+    Total gears             getfuel()               totalgears              getColor()
+                            setcolor()              alarm                   setfueltype()
+                            getcolor()              navigation              getfueltype()
+                            settotalgears()                                 settotalgears()
+                            gettotalgears()                                 gettotalgears()
+                                                                            setalarm()
+                                                                            getalarm()
+                                                                            setnavigation()
+                                                                            getnavigation()
+
+
+    syntax :
+                class car{
+
+                }
+
+                class sports_car extends car{
+
+                }
+
+    Definition -> It is an important pillar of OOPs that inherits properties and behaviours of existing class / super
+                class / parent class / Base class into a derived class .
+                New class = subc lass = child class = derived class
+
+                Syntax :  Class Base_Class{
+
+                }
+                class Derived_class extends baseclass {
+
+                }
+
+
+// Types of Inheritance ->
+        1. Single Inheritance
+        2. Multilevel Inheritance
+        3. Multiple Inheritance
+        4. Hierarchical Inheritance
+        5. Hybrid Inheritance
+
+// Real life example of encapsulation ->
+    The best example of encapsulation could be a calculator .
+    we understand its interface from first type and we dont have to know how it works insightful .
+    we know that we can press 2 + 2 then = and see the result o display .
+
+
+// Method Overriding ->
+    Methods having same name , same return type , same parameter but perform different tasks
+    and are defined in different classes .
+
+    eg .   class Animal {
+               void eat() {
+                   System.out.println("Animal is eating");
+               }
+           }
+
+           class Dog extends Animal {
+               void eat() {
+                   System.out.println("Dog is eating");
+               }
+           }
+
+// Polymorphism ->
+    It is an important concept of OOPs & defined as the ability of a message to be
+    displayed in more than one form
+
+    eg -> A person at the same time can have different characteristics like a man , at same time he is
+    the father , a husband , a employee . so the same person for this different behaviour in different
+    situations . This is called polymorphism .
+
+// Types of polymorphism - >
+
+    1. Compile Time Polymorphism -> This type of polymorphism can be achieved through method overloading
+
+    2. Run Time Polymorphism ->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
