@@ -67,7 +67,7 @@
 //  specifier        same class       same package     subclass(different package)     different package(non-subclass)
 
     private         yes             No                  No                             NO
-    default        Yes             yes                 No                             NO
+    default         Yes             yes                 No                             NO
     Protected       yes             yes                 yes                            No
     public          yes             yes                 yes                            yes
 
@@ -337,9 +337,48 @@
 // Types of polymorphism - >
 
     1. Compile Time Polymorphism -> This type of polymorphism can be achieved through method overloading
+    2. Run Time Polymorphism -> This type of polymorphism can be achieved through method overriding
 
-    2. Run Time Polymorphism ->
 
+// Data Abstraction ->
+    It is an important concept of OOPs . It refers to provide only essential information about the data to
+    the outside world , Hiding the background details for implementation .
+
+   - Real life example -> A man is driving a car , The man only knows that pressing the accelerator will increase
+    the speed of the car or applying the brakes will stop the car , but he does not know about how on pressing
+    accelerator the speed is actually increasing , he does not know about the inner mechanism of the car .
+
+
+// Achieving Abstraction : Abstraction Classes
+    An abstract class is a class that cannot be instantiated directly (you can't create  an object of it using
+    new ) - it's meant only to be extended by subclasses . It can contain :
+
+    Abstract methods - declared but with no body ; subclasses must provide the implementation
+    Regular (concrete) methods - with a full body , inherited as-is .
+
+    abstract class Shape {
+        String color;
+        // Abstract method - no body , just a signature
+        abstract double calculateArea();
+
+        // Regular (concrete) method - has a body
+        void displayColor(){
+            sout("color" +color);
+        }
+    }
+
+    class Circle extends Shape {
+        double radius ;
+        Circle(double radius , String color){
+            this.radius = radius;
+            this.color = color;
+        }
+        @override
+        double calculateArea(){
+            return Math.PI * radius * radius ;
+        }
+    }
+d
 
 
 
