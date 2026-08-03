@@ -1,0 +1,97 @@
+// Time And Space Complexity ->
+
+// What is time complexity -> Time Complexity tells us how much time an algorithm takes as the input size
+    increases . We dont measure it in seconds , but in terms of number of steps / operations .
+
+    example ->      int sum = 0;
+                    for(int i = 1;i<=n;i++){
+                        sum+=i;
+                    }
+
+    The loop runs n times , so time complexity = O(n)
+
+    Analogy = Think of solving math problems
+            1. 10 problems takes some time
+            2. 100 problems takes more time
+            3. The time grows with the number of problems (input size n)
+
+// What is space complexity -> Space complexity tells us how much memory an algorithm needs , it includes
+    memory for :
+        1. Variables
+        2. Data Structures ( arrays , linked lists , etc )
+        3. Function calls ( stack memory )
+
+    example -> int arr[1000];  // it uses memory for 1000 integers
+
+    This has space complexity O(n) if array size depends on input n .
+
+    Analogy = Think of solving problems on paper
+            1. If you use one page -> low space complexity
+            2. If you use a big notebook -> High space complexity
+
+// Time Vs Space trade-off -> Sometimes , we need to choose between saving time or saving space
+    Example 1 : Calculate Fibonacci numbers ;
+        Recursive Method -> less memory , but very slow ( repeat calculations )
+
+    Dynamic programming (DP) -> uses extra memory (stores result) but is much better .
+
+// Algorithms ->
+    1. Algorithm Complexity Analysis -> when we design an algorithm , we want to know :
+        How fast will it run ? -> time complexity
+        How much memory will it need ? -> space complexity
+
+        complexity analysis helps us compare algorithms without running them on a machine
+
+    2. Time vs Space Trade Offs -> Sometimes , faster algorithms use more memory and less memory
+        means slower speed .
+
+        Examples :
+         Storing all results in a lookup table (extra space) makes searching very fast .
+         Not Storing results -> Saves memory , but increase consumption time .
+
+        Real World Analogy :
+         Think of studying for an exam :
+         If you make notes (extra Space) -> you can revise quickly (less time)
+         If you don't make notes -> you save pages , but need more time to revise .
+
+    3. Asymptotic Notations -> Asymptotic Notations describe the growth rate of an algorithm as input
+        size (n) becomes very large .
+
+        we compare algorithms independent of machine or actual values , focusing only on how they scale .
+        (a) Big-O    (O) -> upper bound
+
+        worst-case growth rate
+
+        The algorithm will not grow faster than this .
+        Example : In linear search time is O(n)
+            O(n) = algorithm takes at most n steps for input size n .
+
+        (b)  Big - Omega (omega symbol) -> Lower bound
+
+        Best - case growth rate .
+
+        The algorithm will take at least this much time .
+        Example : In linear Search ,
+            best case = omega(1) , found in first step .
+
+        Graph : algorithm will always stay above or on this curve .
+
+        (c) Theta (ø) - Tight Bound
+
+        Both upper and lower bound are the same .
+        Gives the average . expected growth rate
+
+        Example : In linear Search ,
+            average case = Ø(n)
+
+        Graph : Algorithm is sandwiched between upper and lower bounds .
+
+// Note :
+    1. Time complexity ka matlab yeh nhi hota ki program kitne time me chla , jabki time complexity
+    ka matlab yeh hota hai ki ek yaa ek se jyada instruction kitna number of time chala .
+
+    2. Time complexity hum kabhi bhi chote number ke liye nhi calculate karte , bade number ke liye
+    calculate karte hain .
+
+    3. Generally agar koi time complexity ki baat kar rha hai , iska matlab hai ki wo big(O) O notation
+    ki baat kar rha hai , means while calculating we have to calculate worst case . 

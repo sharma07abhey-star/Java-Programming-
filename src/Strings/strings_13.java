@@ -1,5 +1,10 @@
 package Strings;
 // StringBuilders
+
+// It is a class that represents a mutable sequence of characters - meaning it can be changed in place ,
+// without creating a new object every time . It's the go-to tool whenever you need to build or modify a
+// string repeatedly ( e.g , inside a loop ) .
+
 public class strings_13 {
     public static void main(String[] args){
         StringBuilder s = new StringBuilder("Abhey");

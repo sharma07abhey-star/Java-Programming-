@@ -378,17 +378,150 @@
             return Math.PI * radius * radius ;
         }
     }
-d
+    Class Rectangle extends Shape {
+        double length , width ;
+        Rectangle(double length , double width, String color ){
+            this.length = length ;
+            this.width = width ;
+            this.color = color;
+        }
+
+        @override
+        double calculateArea(){
+            return length * width;
+        }
+    }
+
+    public static void main(String[] args){
+        // Shape s = new Shape();  // Error cannot instatiate an abstract class
+
+        Shape c = new Circle(5,"red");
+        Shape r = new Rectangle(4,6,"Blue");
+
+        c.displayColor();
+        sout("Area" + c.calculateArea());
+
+        r.displayColor();
+        sout("Area" + r.calculateArea());
+    }
+
+
+// Interface
+    An interface is a blueprint that specifies what a class should do but not how it should do .
+
+    Interface Syntax
+
+    interface Drawable {
+        void draw();  // implicitly public and abstract - no body allowed here
+    }
+    class Circle implements Drawable {
+        @override
+        public void draw(){
+            sout("Drawing a circle");
+        }
+    }
+    class Square implements Drawable {
+        @override
+        public void draw(){
+            sout("Drawing square");
+        }
+    }
+    public class main{
+        public static void main(string[] args){
+            Drawable d1 = new circle();
+            Drawable d2 = new square();
+            d1.draw();
+            d2.draw();
+        }
+    }
+
+
+// Multiple Interface Implementation (Solving the "Multiple Inheritance" Limitation)
+    Recall : a class cannot extend multiple classes . But a class can implement multiple interfaces - this is how Java
+    provides the flexibility of "multiple inheritance" safely , without the diamond problem , since interfaces
+    (traditionally) don't provide conflicting implementations .
+
+    interface Drawable {
+        void draw();
+    }
+
+    interface Resizable {
+        void resize();
+    }
+    class Circle implements Drawable,Resizable{
+        @override
+        public void draw(){
+            sout("Drawing circle");
+        }
+        @override
+        pubic void resize(){
+            sout("Resizing circle");
+        }
+    }
+
+// Abstract Class vs Interface - Comparison Table
+
+                      Abstract Class                    Interface
+
+      keyword        abstract class                     interface
+
+      used with      extends                            implements
+
+      Methods        can have both abstract And         Traditionally all abstract ( modern java allows some
+                     concrete Methods                   exceptions , not needed at beginner level )
+
+      variables      can have any type of variables     implicitly public static final (constants only)
+
+      Multiple      A class can extend only one         A class can implement multiple interfaces
+      Inheritance   abstract class
+
+      Use when      classes share some common code      you just want to enforce what must be done ,
+                    /state and an "is-a" relationship   across possibly unrelated classes
+
+
+// The Super Keyword
+    super refers to the immediate parent class . It's used for two main purposes :
+
+    a) calling the parent's constructor :
+
+        class Animal {
+            String name ;
+            Animal(String name){
+                this.name = name ;
+                sout("Animal constructor called");
+            }
+        }
+
+        class Dog extends Animal{
+            Dog(String name){
+                super(name);
+                sout("Dog constructor called");
+            }
+        }
+
+        public class main{
+            public static void main(String[] args){
+                Dog d = new Dog("Tommy");
+            }
+        }
+
+        // Important rule - Must be the very first statement in the subclass constructor . If you dont call it
+           explicitly , java automatically inserts a call to the parent's no argument constructor .
 
 
 
-
-
-
-
-
-
-
+    b) Calling the parent's method (when overridden);
+        Class Animal{
+            void sound() {
+                System.out.println("Animals make sounds");
+            }
+        }
+        class Dog extends Animal{
+            void sound(){
+                super.sound();
+                System.out.println("Dog Barks");
+            }
+        }
 
 
 
